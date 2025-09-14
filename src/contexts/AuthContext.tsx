@@ -6,7 +6,6 @@ interface User {
   id: string;
   username: string;
   email: string;
-  role: string;
 }
 
 interface AuthContextType {
@@ -23,7 +22,6 @@ interface RegisterData {
   username: string;
   email: string;
   password: string;
-  role: string;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);

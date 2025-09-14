@@ -3,7 +3,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAuth } from '@/contexts/AuthContext';
 import { Loader2 } from 'lucide-react';
@@ -13,7 +12,6 @@ const Register = () => {
     username: '',
     email: '',
     password: '',
-    role: '',
   });
   const { register, loading } = useAuth();
   const navigate = useNavigate();
@@ -21,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.username || !formData.email || !formData.password || !formData.role) {
+    if (!formData.username || !formData.email || !formData.password) {
       return;
     }
 
@@ -87,22 +85,6 @@ const Register = () => {
                 required
                 className="h-11"
               />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="role" className="text-sm font-medium">
-                Role
-              </Label>
-              <Select value={formData.role} onValueChange={(value) => handleInputChange('role', value)}>
-                <SelectTrigger className="h-11">
-                  <SelectValue placeholder="-- Select Role --" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="user">User</SelectItem>
-                  <SelectItem value="editor">Editor</SelectItem>
-                  <SelectItem value="manager">Manager</SelectItem>
-                </SelectContent>
-              </Select>
             </div>
 
             <Button 

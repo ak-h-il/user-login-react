@@ -24,8 +24,6 @@ const Dashboard = () => {
               <div className="flex items-center space-x-2 text-sm">
                 <User className="h-4 w-4 text-muted-foreground" />
                 <span className="font-medium">{user?.username}</span>
-                <span className="text-muted-foreground">•</span>
-                <span className="capitalize text-primary">{user?.role}</span>
               </div>
               <Button
                 variant="outline"
@@ -48,7 +46,7 @@ const Dashboard = () => {
             Welcome back, {user?.username}!
           </h2>
           <p className="text-muted-foreground mt-2">
-            You're logged in as a <span className="capitalize font-medium">{user?.role}</span>
+            Your account dashboard and information
           </p>
         </div>
 
@@ -63,19 +61,6 @@ const Dashboard = () => {
               <div className="text-2xl font-bold text-green-600">Active</div>
               <p className="text-xs text-muted-foreground">
                 Your account is verified and active
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Role Permissions</CardTitle>
-              <Settings className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold capitalize">{user?.role}</div>
-              <p className="text-xs text-muted-foreground">
-                Access level assigned to your account
               </p>
             </CardContent>
           </Card>
@@ -115,12 +100,6 @@ const Dashboard = () => {
                   Email Address
                 </label>
                 <p className="text-sm font-medium">{user?.email}</p>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-muted-foreground">
-                  Role
-                </label>
-                <p className="text-sm font-medium capitalize">{user?.role}</p>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-muted-foreground">
