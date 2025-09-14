@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAuth } from '@/contexts/AuthContext';
-import { Loader2, Shield } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
+import haryanaLogo from '@/assets/haryana-logo.png';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -36,11 +37,15 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center pb-6">
-          <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-            <Shield className="h-8 w-8 text-primary" />
+          <div className="flex justify-center mb-4">
+            <img 
+              src={haryanaLogo} 
+              alt="Haryana Government Logo" 
+              className="w-20 h-20 object-contain"
+            />
           </div>
-          <CardTitle className="text-2xl font-semibold text-primary">Login Panel</CardTitle>
-          <CardDescription>Sign in to access your account</CardDescription>
+          <CardTitle className="text-2xl font-semibold text-primary">Login</CardTitle>
+          <CardDescription>Welcome back! Please enter your details</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <form onSubmit={handleSubmit} className="space-y-4">

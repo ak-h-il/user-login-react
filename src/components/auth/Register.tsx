@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAuth } from '@/contexts/AuthContext';
 import { Loader2 } from 'lucide-react';
+import haryanaLogo from '@/assets/haryana-logo.png';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -37,6 +38,13 @@ const Register = () => {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center pb-4">
+          <div className="flex justify-center mb-4">
+            <img 
+              src={haryanaLogo} 
+              alt="Haryana Government Logo" 
+              className="w-20 h-20 object-contain"
+            />
+          </div>
           <CardTitle className="text-2xl font-semibold text-primary">Register</CardTitle>
           <CardDescription>Create your account to get started</CardDescription>
         </CardHeader>
